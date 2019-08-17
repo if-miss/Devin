@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/devin.iml" filepath="$PROJECT_DIR$/devin.iml" />
       <module fileurl="file://$PROJECT_DIR$/huihui/huihui.iml" filepath="$PROJECT_DIR$/huihui/huihui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/huihui-pc-manager/huihui-pc-manager.iml" filepath="$PROJECT_DIR$/huihui-pc-manager/huihui-pc-manager.iml" />
     </modules>
   </component>
 </project>
