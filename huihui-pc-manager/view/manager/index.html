@@ -8,23 +8,63 @@
     <title>辉辉管理</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="javascript:;">Devin舞蹈</a>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">退出</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="container-fluid">
-
-        <span>dfdfasdfdfd</span>
-        <span class="glyphicon glyphicon-menu-left"></span>
-
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="javascript:;">Devin舞蹈</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">退出</a>
+        </li>
+    </ul>
+</nav>
+<div class="container-fluid">
+    <span class="glyphicon glyphicon-menu-left"></span><span>测试图标</span>
+    <button type="button" class="btn btn-lg btn-primary" onclick="showModal()">打开模态框</button>
+</div>
+<!-- 模态框-->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">测试重复提交</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="doubleCommit(this)">提交</button>
+            </div>
+        </div>
     </div>
+</div>
+<input type="hidden" id="verifyCommit">
 </body>
 <!--bootstrap 依赖jquery-->
 <script src="../../plugins/jquery/jquery-3.4.1.min.js"></script>
 <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
+<script>
+
+    function showModal() {
+        $('#myModal').modal('show');
+        $("#verifyCommit").val("1");
+    }
+
+    //测试重复提交问题
+    function doubleCommit(el) {
+        //$(el).attr("disabled","disabled");
+        if ($("#verifyCommit").val() == 1) {
+            $("#verifyCommit").val(2);
+            console.log("重复提交重复提交")
+            setTimeout(function () {
+                console.log("1秒后我已经放开重复提交。。。。。。");
+                $("#verifyCommit").val("1");
+
+            }, 1000)
+        }
+        //$(el).removeAttr("disabled");
+    }
+</script>
 </html>

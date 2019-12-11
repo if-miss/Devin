@@ -6,6 +6,6 @@
 
     <groupId>com.huihui.core</groupId>
     <artifactId>huihui</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
 </project>
